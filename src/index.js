@@ -146,6 +146,10 @@ class DrumMachine extends React.Component {
 		
 		this.handleChange = this.handleChange.bind(this);
 
+		
+	}
+	
+	componentDidMount() {
 		document.addEventListener("keydown", (event) => {
 			if (event.key === "q" || event.key === "Q") {
 				document.getElementById("Q-btn").click();
@@ -167,12 +171,14 @@ class DrumMachine extends React.Component {
 				document.getElementById("C-btn").click();
 			}
 		});
-    }
+	}
 
 	handleChange(event, value) {
 		let currentDisplay = "";
 		let audio;
 		let volume = this.state.volume;
+
+		let playPromise;
 
 		if(!this.state.power) {
 			volume = 0;
@@ -196,63 +202,90 @@ class DrumMachine extends React.Component {
 				audio = document.getElementById(value);
 				audio.volume = volume / 100;
 				audio.currentTime = 0;
-				audio.play();
+				playPromise = audio.play();
+				if (playPromise !== undefined) {
+					playPromise.then(_ => {}).catch(err => {console.log(err)});
+				}
 				break;
 			case "W-btn":
 				currentDisplay = "Heater 2";
 				audio = document.getElementById(value);
 				audio.volume = volume / 100;
 				audio.currentTime = 0;
-				audio.play();
+				playPromise = audio.play();
+				if (playPromise !== undefined) {
+					playPromise.then(_ => {}).catch(err => {console.log(err)});
+				}
 				break;
 			case "E-btn":
 				currentDisplay = "Heater 3";
 				audio = document.getElementById(value);
 				audio.volume = volume / 100;
 				audio.currentTime = 0;
-				audio.play();
+				playPromise = audio.play();
+				if (playPromise !== undefined) {
+					playPromise.then(_ => {}).catch(err => {console.log(err)});
+				}
 				break;
 			case "A-btn":
 				currentDisplay = "Heater 4";
 				audio = document.getElementById(value);
 				audio.volume = volume / 100;
 				audio.currentTime = 0;
-				audio.play();
+				playPromise = audio.play();
+				if (playPromise !== undefined) {
+					playPromise.then(_ => {}).catch(err => {console.log(err)});
+				}
 				break;
 			case "S-btn":
 				currentDisplay = "Clap";
 				audio = document.getElementById(value);
 				audio.volume = volume / 100;
 				audio.currentTime = 0;
-				audio.play();
+				playPromise = audio.play();
+				if (playPromise !== undefined) {
+					playPromise.then(_ => {}).catch(err => {console.log(err)});
+				}
 				break;
 			case "D-btn":
 				currentDisplay = "Open HH";
 				audio = document.getElementById(value);
 				audio.volume = volume / 100;
 				audio.currentTime = 0;
-				audio.play();
+				playPromise = audio.play();
+				if (playPromise !== undefined) {
+					playPromise.then(_ => {}).catch(err => {console.log(err)});
+				}
 				break;
 			case "Z-btn":
 				currentDisplay = "Kick n' Hat";
 				audio = document.getElementById(value);
 				audio.volume = volume / 100;
 				audio.currentTime = 0;
-				audio.play();
+				playPromise = audio.play();
+				if (playPromise !== undefined) {
+					playPromise.then(_ => {}).catch(err => {console.log(err)});
+				}
 				break;
 			case "X-btn":
 				currentDisplay = "Kick";
 				audio = document.getElementById(value);
 				audio.volume = volume / 100;
 				audio.currentTime = 0;
-				audio.play();
+				playPromise = audio.play();
+				if (playPromise !== undefined) {
+					playPromise.then(_ => {}).catch(err => {console.log(err)});
+				}
 				break;
 			case "C-btn":
 				currentDisplay = "Close HH";
 				audio = document.getElementById(value);
 				audio.volume = volume / 100;
 				audio.currentTime = 0;
-				audio.play();
+				playPromise = audio.play();
+				if (playPromise !== undefined) {
+					playPromise.then(_ => {}).catch(err => {console.log(err)});
+				}
 				break;
 			default:
 			break;
