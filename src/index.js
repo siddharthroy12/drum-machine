@@ -309,12 +309,10 @@ class DrumMachine extends React.Component {
 						</Grid>
 					</Grid>	
 				</Paper>
-
 				<Typography gutterBottom align="center" style={{color:"white", marginTop:"10px"}}>
 						By Siddharth Roy
 				</Typography>
 			</ThemeProvider>
-			
 		);
     }
 }
